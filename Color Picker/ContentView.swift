@@ -15,17 +15,14 @@ struct ContentView: View {
     @State private var blue:Double=225;
     var body: some View {
         VStack{
+            
             Rectangle().frame(width: 150, height: 150, alignment: Alignment.center)
                 .foregroundColor(Color(red: red/225, green: green/225, blue: blue/225))
+            slide_screen(value: $red, label: "Red")
+            slide_screen(value: $green, label: "Green")
+            slide_screen(value: $blue, label: "Blue")
             
-            Slider(value: $red,in:0...225,step: 1)
-            Text("Red: \(Int(red))")
             
-            Slider(value: $green,in:0...225,step: 1)
-            Text("Green: \(Int(green))")
-            
-            Slider(value: $blue,in:0...225,step: 1)
-            Text("Blue: \(Int(blue))")
         }.padding()
     }
 }
